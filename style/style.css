@@ -1,0 +1,82 @@
+.acceuil-banner {
+  padding: 10px 50px;
+  margin: 2rem 0;
+  background-image: url(../../img/david-smart-tJYEGpU_XGM-unsplash.jpg);
+  background-position: bottom;
+  background-size: cover;
+  background-attachment: fixed;
+  min-height: 20rem;
+  text-align: right;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+}
+.acceuil-banner h1 {
+  color: white;
+  font-weight: 700;
+  font-size: 4em;
+  text-shadow: 2px 5px #563f49;
+}
+.acceuil-banner .pres {
+  margin: 0 50px;
+  width: 100%;
+}
+.acceuil-banner .pres strong {
+  display: block;
+  font-weight: 400;
+  color: white;
+  font-size: 25px;
+  margin-top: 50px;
+  text-shadow: 2px 2px #563f49;
+}
+.acceuil-banner .pres strong:nth-child(1) {
+  text-align: right;
+}
+.acceuil-banner .pres strong:nth-child(2) {
+  text-align: left;
+}
+
+header {
+  height: 5rem;
+  display: flex;
+  justify-content: space-between;
+  background: rgba(255, 255, 255, 0.5);
+  box-shadow: 0 4px 30px rgba(124, 104, 104, 0.295);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  padding: 10px 50px;
+}
+header nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 50px;
+}
+header nav a {
+  font-weight: 700;
+  cursor: pointer;
+}
+header nav a.underline {
+  text-decoration: underline 3px rgba(238, 143, 11, 0.5333333333);
+}
+
+* {
+  color: #563f49;
+}
+
+h1,
+h2,
+h3 {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  background: #fefefe;
+  margin: 0;
+  font-family: "Poppins";
+  height: 300vh;
+}
+
+/*# sourceMappingURL=style.css.map */

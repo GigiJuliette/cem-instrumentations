@@ -1,0 +1,15 @@
+@mixin flex-center {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@mixin glass {
+  background: rgba(255, 255, 255, .5);
+  box-shadow: 0 4px 30px rgba(124, 104, 104, 0.295);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+
+$orange : #ee8f0b88;
+$brown: #563f49;

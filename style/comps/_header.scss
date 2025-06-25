@@ -1,0 +1,23 @@
+@use '../base' as v;
+
+header {
+  height: 5rem;
+  display: flex;
+  justify-content: space-between;
+  @include v.glass;
+  padding: 10px 50px;
+
+  & nav {
+    @include v.flex-center;
+    gap: 50px;
+
+    & a {
+      font-weight: 700;
+      cursor: pointer;
+
+      &.underline {
+        text-decoration: underline 3px v.$orange;
+      }
+    }
+  }
+}

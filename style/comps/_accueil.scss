@@ -1,0 +1,47 @@
+@use '../base' as v;
+
+.acceuil-banner {
+  // @include v.glass;
+  padding: 10px 50px;
+  margin: 2rem 0;
+  background-image: url(../../img/david-smart-tJYEGpU_XGM-unsplash.jpg);
+  background-position: bottom;
+  background-size: cover;
+  background-attachment: fixed;
+  min-height: 20rem;
+  text-align: right;
+  @include v.flex-center;
+  flex-direction: column;
+
+  & h1 {
+    color: white;
+    font-weight: 700;
+    font-size: 4em;
+    text-shadow: 2px 5px v.$brown;
+  }
+
+  & .pres {
+    // backdrop-filter: blur(20px);
+    // -webkit-backdrop-filter: blur(20px);
+    margin: 0 50px;
+    width: 100%;
+
+    & strong {
+      display: block;
+      font-weight: 400;
+      color: white;
+      font-size: 25px;
+      margin-top: 50px;
+      text-shadow: 2px 2px v.$brown;
+
+      &:nth-child(1) {
+        text-align: right;
+      }
+
+      &:nth-child(2) {
+        text-align: left;
+      }
+    }
+  }
+
+}
