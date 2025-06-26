@@ -4,44 +4,105 @@
   // @include v.glass;
   padding: 10px 50px;
   margin: 2rem 0;
+  font-size: 30px;
   background-image: url(../img/viaduc.jpg);
   background-position: bottom;
   background-size: cover;
   background-attachment: fixed;
   min-height: 20rem;
-  text-align: right;
-  @include v.flex-center;
+  color: #fefefe;
+  display: flex;
   flex-direction: column;
+  justify-content: center;
 
   & h1 {
-    color: white;
     font-weight: 700;
-    font-size: 4em;
+    font-size: 3em;
     text-shadow: 2px 5px v.$brown;
+    // text-align: right;
   }
 
-  & .pres {
-    // backdrop-filter: blur(20px);
-    // -webkit-backdrop-filter: blur(20px);
-    margin: 0 50px;
-    width: 100%;
 
-    & strong {
-      display: block;
-      font-weight: 400;
-      color: white;
-      font-size: 25px;
-      margin-top: 50px;
-      text-shadow: 2px 2px v.$brown;
+}
+
+.pres-anim {
+  display: flex;
+
+  &__dropping-text {
+    display: inline-block;
+    margin-left: 15px;
+    // height: 50px;
+
+    &>span {
+      font-size: 0px;
+      opacity: 0;
+      margin-left: -30px;
+      position: absolute;
 
       &:nth-child(1) {
-        text-align: right;
+        animation: roll 5s linear infinite 0s;
       }
 
       &:nth-child(2) {
-        text-align: left;
+        animation: roll 5s linear infinite 1s;
+      }
+
+      &:nth-child(3) {
+        animation: roll 5s linear infinite 2s;
+      }
+
+      &:nth-child(4) {
+        animation: roll 5s linear infinite 3s;
+      }
+
+      &:nth-child(5) {
+        animation: roll 5s linear infinite 4s;
       }
     }
   }
+}
 
+@keyframes roll {
+  0% {
+    font-size: 0px;
+    opacity: 0;
+    margin-left: -30px;
+    margin-top: 0px;
+    transform: rotate(-25deg);
+  }
+
+  3% {
+    opacity: 1;
+    transform: rotate(0deg);
+  }
+
+  5% {
+    font-size: inherit;
+    opacity: 1;
+    margin-left: 0px;
+    margin-top: 0px;
+  }
+
+  20% {
+    font-size: inherit;
+    opacity: 1;
+    margin-left: 0px;
+    margin-top: 0px;
+    transform: rotate(0deg);
+  }
+
+  27% {
+    font-size: 0px;
+    opacity: 0.5;
+    margin-left: 20px;
+    margin-top: 100px;
+  }
+
+  100% {
+    font-size: 0px;
+    opacity: 0;
+    margin-left: -30px;
+    margin-top: 0px;
+    transform: rotate(15deg);
+  }
 }
