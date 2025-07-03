@@ -1,9 +1,15 @@
+:root {
+  --marge: 50px;
+  --img-size: 300px;
+  --arrow-height: calc(var(--marge)/2);
+}
+
 .acceuil-banner {
-  padding: 10px 50px;
+  padding: 10px var(--marge);
   margin: 2rem 0;
   font-size: 30px;
   background-image: url(../img/viaduc.jpg);
-  background-position: bottom;
+  background-position: center;
   background-size: cover;
   background-attachment: fixed;
   min-height: 20rem;
@@ -15,7 +21,6 @@
 .acceuil-banner h1 {
   font-weight: 700;
   font-size: 3em;
-  text-shadow: 2px 5px #563f49;
 }
 
 .pres-anim {
@@ -94,25 +99,75 @@ header {
   box-shadow: 0 4px 30px rgba(124, 104, 104, 0.295);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
-  padding: 10px 50px;
+  padding: 10px var(--marge);
+  position: sticky;
+  top: 0;
+  z-index: 10;
 }
 header nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 50px;
+  gap: var(--marge);
 }
 header nav a {
   font-weight: 700;
   cursor: pointer;
+  text-decoration: none;
+  color: #563f49;
 }
 header nav a.underline {
   text-decoration: underline 3px rgba(238, 143, 11, 0.5333333333);
 }
 
+.hide {
+  clip: rect(0 0 0 0);
+  position: absolute;
+}
+
+.micropieux {
+  margin: var(--marge);
+  padding: var(--marge);
+  display: flex;
+  justify-content: center;
+  height: var(--img-size);
+  gap: calc(var(--img-size) / 4);
+  background: rgba(255, 255, 255, 0.5);
+  box-shadow: 0 4px 30px rgba(124, 104, 104, 0.295);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+.micropieux__text {
+  max-width: var(--img-size);
+}
+.micropieux__img-container {
+  position: relative;
+  width: var(--img-size);
+}
+.micropieux__img-container div {
+  position: absolute;
+  height: var(--img-size);
+  aspect-ratio: 1/1;
+}
+.micropieux__img-container div img {
+  width: 100%;
+  height: 100%;
+}
+.micropieux__img-container .label {
+  cursor: pointer;
+  position: absolute;
+  z-index: 10;
+  bottom: 0;
+  right: 0;
+}
+.micropieux__img-container .label img {
+  width: var(--marge);
+}
+
 h1,
 h2,
-h3 {
+h3,
+a {
   padding: 0;
   margin: 0;
 }
@@ -120,7 +175,7 @@ h3 {
 body {
   background: #fefefe;
   margin: 0;
-  font-family: "Poppins";
+  font-family: "DM Serif Text", serif;
   height: 300vh;
 }
 

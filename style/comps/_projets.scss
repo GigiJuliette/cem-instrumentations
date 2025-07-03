@@ -1,1 +1,49 @@
 @use '../base' as v;
+
+
+.hide {
+  clip: rect(0 0 0 0);
+  position: absolute;
+}
+
+.micropieux {
+  margin: var(--marge);
+  padding: var(--marge);
+  display: flex;
+  justify-content: center;
+  height: var(--img-size);
+  gap: calc(var(--img-size)/4);
+  @include v.glass;
+
+  &__text {
+    max-width: var(--img-size);
+  }
+
+  &__img-container {
+    position: relative;
+    width: var(--img-size);
+
+    & div {
+      position: absolute;
+      height: var(--img-size);
+      aspect-ratio: 1/1;
+
+      & img {
+        width: 100%;
+        height: 100%;
+      }
+    }
+
+    & .label {
+      cursor: pointer;
+      position: absolute;
+      z-index: 10;
+      bottom: 0;
+      right: 0;
+
+      & img {
+        width: var(--marge);
+      }
+    }
+  }
+}

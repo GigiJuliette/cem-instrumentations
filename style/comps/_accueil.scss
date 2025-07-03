@@ -1,12 +1,11 @@
 @use '../base' as v;
 
 .acceuil-banner {
-  // @include v.glass;
-  padding: 10px 50px;
+  padding: 10px var(--marge);
   margin: 2rem 0;
   font-size: 30px;
   background-image: url(../img/viaduc.jpg);
-  background-position: bottom;
+  background-position: center;
   background-size: cover;
   background-attachment: fixed;
   min-height: 20rem;
@@ -18,12 +17,14 @@
   & h1 {
     font-weight: 700;
     font-size: 3em;
-    text-shadow: 2px 5px v.$brown;
-    // text-align: right;
+    // text-shadow: 2px 5px v.$brown;
   }
 
-
 }
+
+// .overlay {
+//   border-image: linear-gradient(#ee8f0b2f, #ffffff0a) fill 1;
+// }
 
 .pres-anim {
   display: flex;
