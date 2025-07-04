@@ -1,7 +1,6 @@
 :root {
   --marge: 50px;
   --img-size: 300px;
-  --arrow-height: calc(var(--marge)/2);
 }
 
 .acceuil-banner {
@@ -125,11 +124,11 @@ header nav a.underline {
   position: absolute;
 }
 
-.micropieux {
-  margin: var(--marge);
+.activite {
+  margin: var(--marge) 25%;
   padding: var(--marge);
   display: flex;
-  justify-content: center;
+  justify-content: space-evenly;
   height: var(--img-size);
   gap: calc(var(--img-size) / 4);
   background: rgba(255, 255, 255, 0.5);
@@ -137,30 +136,33 @@ header nav a.underline {
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
 }
-.micropieux__text {
+.activite__text {
   max-width: var(--img-size);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  text-align: right;
 }
-.micropieux__img-container {
+.activite__img-container {
   position: relative;
   width: var(--img-size);
 }
-.micropieux__img-container div {
+.activite__img-container div {
   position: absolute;
   height: var(--img-size);
   aspect-ratio: 1/1;
 }
-.micropieux__img-container div img {
+.activite__img-container div img {
   width: 100%;
   height: 100%;
 }
-.micropieux__img-container .label {
+.activite .label {
   cursor: pointer;
   position: absolute;
   z-index: 10;
-  bottom: 0;
-  right: 0;
+  bottom: calc(var(--marge) - 10px);
 }
-.micropieux__img-container .label img {
+.activite .label img {
   width: var(--marge);
 }
 

@@ -1,25 +1,19 @@
 const arrowM = document.getElementById("arrowM");
 const imgM = document.getElementById("imgM");
+const arrowTa = document.getElementById("arrowTa");
+const imgTa = document.getElementById("imgTa");
 
 let imgNumber = 1;
 
-function imgChange(button, image, sectionName) {
+function imgChange(button, image, sectionName, format) {
   button.addEventListener("click", () => {
     imgNumber += 1;
     if (imgNumber === 4) {
       imgNumber = 1;
     }
-    image.setAttribute("src", `./img/${sectionName}${imgNumber}.png`);
+    image.setAttribute("src", `./img/${sectionName}${imgNumber}.${format}`);
   })
 }
 
-// let imgNumber = 1;
-
-// function imgChange(button, image, sectionName) {
-//   button.addEventListener("click", () => {
-//     imgNumber = imgNumber + 1 % 3;
-//     image.setAttribute("src", `./img/${sectionName}${imgNumber}.png`);
-//   })
-// }
-
-imgChange(arrowM, imgM, "micropieux");
+imgChange(arrowM, imgM, "micropieux", "png");
+imgChange(arrowTa, imgTa, "ta", "jpg");

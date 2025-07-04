@@ -6,17 +6,21 @@
   position: absolute;
 }
 
-.micropieux {
-  margin: var(--marge);
+.activite {
+  margin: var(--marge) 25%;
   padding: var(--marge);
   display: flex;
-  justify-content: center;
+  justify-content: space-evenly;
   height: var(--img-size);
   gap: calc(var(--img-size)/4);
   @include v.glass;
 
   &__text {
     max-width: var(--img-size);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    text-align: right;
   }
 
   &__img-container {
@@ -33,17 +37,18 @@
         height: 100%;
       }
     }
+  }
 
-    & .label {
-      cursor: pointer;
-      position: absolute;
-      z-index: 10;
-      bottom: 0;
-      right: 0;
+  & .label {
+    cursor: pointer;
+    position: absolute;
+    z-index: 10;
+    bottom: calc(var(--marge) - 10px);
+    // right: 0;
 
-      & img {
-        width: var(--marge);
-      }
+
+    & img {
+      width: var(--marge);
     }
   }
 }
