@@ -2,6 +2,8 @@ const arrowM = document.getElementById("arrowM");
 const imgM = document.getElementById("imgM");
 const arrowTa = document.getElementById("arrowTa");
 const imgTa = document.getElementById("imgTa");
+const arrowCl = document.getElementById("arrowCl");
+const imgCl = document.getElementById("imgCl");
 
 let imgNumber = 1;
 
@@ -17,3 +19,5 @@ function imgChange(button, image, sectionName, format) {
 
 imgChange(arrowM, imgM, "micropieux", "png");
 imgChange(arrowTa, imgTa, "ta", "jpg");
+imgChange(arrowCl, imgCl, "cl", "jpg");
+imgChange(arrowEs, imgEs, "es", "jpg");

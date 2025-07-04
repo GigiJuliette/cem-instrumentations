@@ -4,7 +4,10 @@ header {
   height: 5rem;
   display: flex;
   justify-content: space-between;
-  @include v.glass;
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  background: rgba(255, 255, 255, .2);
+  box-shadow: 0 4px 30px rgba(124, 104, 104, 0.295);
   padding: 10px var(--marge);
   position: sticky;
   top: 0;
@@ -12,16 +15,46 @@ header {
 
   & nav {
     @include v.flex-center;
+    justify-content: space-between;
     gap: var(--marge);
 
-    & a {
-      font-weight: 700;
-      cursor: pointer;
-      text-decoration: none;
+    a {
+      font-family: "DM Serif Text", serif;
       color: v.$brown;
+      text-decoration: none;
+      cursor: pointer;
+      display: inline-block;
+      padding: 15px 20px;
+      position: relative;
 
-      &.underline {
-        text-decoration: underline 3px v.$orange;
+      &:after {
+        bottom: 0;
+        content: "";
+        display: block;
+        height: 2px;
+        left: 50%;
+        position: absolute;
+        background: v.$orange;
+        transition: 0.3s ease;
+        width: 0;
+      }
+
+      &:hover:after {
+        width: 100%;
+        left: 0;
+      }
+    }
+
+    & .underline {
+      &:after {
+        bottom: 0;
+        content: "";
+        display: block;
+        height: 2px;
+        left: 0;
+        position: absolute;
+        background: v.$orange;
+        width: 100%;
       }
     }
   }
