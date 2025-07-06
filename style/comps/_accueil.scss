@@ -9,7 +9,7 @@
   background-size: cover;
   background-attachment: fixed;
   min-height: 20rem;
-  color: #fefefe;
+  color: v.$white;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -21,6 +21,7 @@
   & h1 {
     font-weight: 700;
     font-size: 3em;
+    text-shadow: 1px 1px 0 #1410126e, 1px -1px 0 #1410126e, -1px 1px 0 #1410126e, -1px -1px 0 #1410126e, 1px 0px 0 #1410126e, 0px 1px 0 #1410126e, -1px 0px 0 #1410126e, 0px -1px 0 #1410126e;
   }
 
 }
@@ -37,25 +38,26 @@
       opacity: 0;
       margin-left: -30px;
       position: absolute;
+      text-shadow: 1px 1px 0 v.$orange, 1px -1px 0 v.$orange, -1px 1px 0 v.$orange, -1px -1px 0 v.$orange, 1px 0px 0 v.$orange, 0px 1px 0 v.$orange, -1px 0px 0 v.$orange, 0px -1px 0 v.$orange;
 
       &:nth-child(1) {
-        animation: roll 5s linear infinite 0s;
+        animation: roll 10s linear infinite 0s;
       }
 
       &:nth-child(2) {
-        animation: roll 5s linear infinite 1s;
+        animation: roll 10s linear infinite 2s;
       }
 
       &:nth-child(3) {
-        animation: roll 5s linear infinite 2s;
+        animation: roll 10s linear infinite 4s;
       }
 
       &:nth-child(4) {
-        animation: roll 5s linear infinite 3s;
+        animation: roll 10s linear infinite 6s;
       }
 
       &:nth-child(5) {
-        animation: roll 5s linear infinite 4s;
+        animation: roll 10s linear infinite 8s;
       }
     }
   }
@@ -115,7 +117,6 @@
 }
 
 .geo {
-  // @include v.glass;
   height: fit-content;
   margin: -3rem 0;
   @include v.flex-center;
