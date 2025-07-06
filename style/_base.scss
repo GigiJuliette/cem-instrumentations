@@ -1,21 +1,35 @@
 @mixin flex-center {
   display: flex;
-
   align-items: center;
 }
 
 @mixin glass {
-  background: rgba(255, 255, 255, .2);
+  background: rgba(255, 255, 255, 0.123);
   box-shadow: 0 4px 30px rgba(124, 104, 104, 0.295);
-  backdrop-filter: blur(1px);
+  backdrop-filter: blur(2px);
   -webkit-backdrop-filter: blur(1px);
+  border: #ee8f0b2f solid 1px;
+}
+
+@mixin darkglass {
+  background: #ee8f0b18;
+  box-shadow: 0 4px 30px rgba(124, 104, 104, 0.295);
+  backdrop-filter: blur(200px);
+  -webkit-backdrop-filter: blur(1px);
+  border: #ee8f0b2f solid 1px;
+  border-radius: 30px;
 }
 
 $orange : #ee8f0b88;
 $brown: #563f49;
 $white: #fefefe;
+$dark: #141012;
 
 :root {
   --marge: 50px;
   --img-size: 300px;
+}
+
+* {
+  color: $white;
 }

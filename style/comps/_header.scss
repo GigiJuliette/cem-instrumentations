@@ -4,23 +4,23 @@ header {
   height: 5rem;
   display: flex;
   justify-content: space-between;
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  background: rgba(255, 255, 255, .2);
-  box-shadow: 0 4px 30px rgba(124, 104, 104, 0.295);
-  padding: 10px var(--marge);
+  margin: var(--marge);
   position: sticky;
-  top: 0;
+  top: var(--marge);
   z-index: 10;
 
   & nav {
     @include v.flex-center;
     justify-content: space-between;
     gap: var(--marge);
+    @include v.darkglass;
+    position: sticky;
+    top: var(--marge);
+    z-index: 10;
+    padding: 0 var(--marge);
 
     a {
-      font-family: "DM Serif Text", serif;
-      color: v.$brown;
+      color: v.$white;
       text-decoration: none;
       cursor: pointer;
       display: inline-block;
@@ -31,7 +31,7 @@ header {
         bottom: 0;
         content: "";
         display: block;
-        height: 2px;
+        height: 1px;
         left: 50%;
         position: absolute;
         background: v.$orange;
@@ -50,7 +50,7 @@ header {
         bottom: 0;
         content: "";
         display: block;
-        height: 2px;
+        height: 1px;
         left: 0;
         position: absolute;
         background: v.$orange;
