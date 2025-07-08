@@ -240,10 +240,20 @@
   }
 }
 
-.slider {
-  @include v.darkglass;
-  height: var(--marge);
+.slider-container {
   margin: var(--bento-margin);
+
+  & h2 {
+    padding-left: var(--inside-margin);
+    font-size: var(--subtitle-fontsize);
+    height: calc(var(--subtitle-fontsize) / 1.1)
+  }
+
+  & .slider {
+    @include v.darkglass;
+    height: var(--marge);
+    @include v.flex-center;
+  }
 }
 
 .b {
