@@ -1,22 +1,3 @@
-// import { Resend } from 'resend';
-
-// const resend = new Resend('process.env.RESEND_KEY');
-
-// (async function () {
-//   const { data, error } = await resend.emails.send({
-//     from: 'Acme <onboarding@resend.dev>',
-//     to: ['delivered@resend.dev'],
-//     subject: 'Hello World',
-//     html: '<strong>It works!</strong>',
-//   });
-
-//   if (error) {
-//     return console.error({ error });
-//   }
-
-//   console.log({ data });
-// })();
-
 import { Resend } from 'resend';
 
 const resend = new Resend(process.env.RESEND_KEY);
@@ -30,7 +11,7 @@ export default async function handler(req, res) {
 
   try {
     const { data, error } = await resend.emails.send({
-      from: 'Acme <onboarding@resend.dev>',
+      from: 'CEM instrumentations via Website',
       to: ['gigialiasjuliette@gmail.com'], // change ça
       subject: `Message de ${name}`,
       html: `<p><strong>Nom:</strong> ${name}</p>
