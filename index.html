@@ -21,7 +21,7 @@
       <a class="underline" href="./index.html">Accueil</a>
       <a>A Propos</a>
       <a href="#metier">Activites</a>
-      <a>Contact</a>
+      <a href="#contact">Contact</a>
     </nav>
   </header>
   <section class="hero">
@@ -152,7 +152,18 @@
       </div>
     </div>
   </section>
+  <section id="contact">
+    <h2>Contactez-nous</h2>
+    <form id="contact-form">
+      <input type="text" name="name" placeholder="Nom" required />
+      <input type="email" name="email" placeholder="Email" required />
+      <textarea name="message" placeholder="Votre message" required></textarea>
+      <button class="cta" type="submit">Envoyer</button>
+      <p id="status"></p>
+    </form>
+  </section>
   <script src="./js/particles-js.js"></script>
+  <script src="./js/mail.js"></script>
   <script src="./js/main.js"></script>
 </body>
 

@@ -1,1 +1,46 @@
 @use '../base' as v;
+
+
+#contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--inside-margin);
+
+  & input,
+  textarea {
+    all: unset;
+    box-sizing: border-box;
+    @include v.glass;
+
+    &:focus {
+      border: 1px solid v.$orange;
+    }
+  }
+
+  & textarea {
+    @include v.left;
+    height: 150px;
+    padding: var(--inside-margin);
+  }
+
+  & input {
+    padding: calc(var(--inside-margin) / 2) var(--inside-margin);
+    max-width: 30%;
+    @include v.left;
+  }
+}
+
+#contact {
+  margin: var(--bento-margin);
+
+  & h2 {
+    font-size: var(--title-fontsize);
+    height: calc(var(--title-fontsize) / 1.1);
+    overflow: hidden;
+    padding-left: var(--inside-margin);
+  }
+
+  & button {
+    width: max-content;
+  }
+}
