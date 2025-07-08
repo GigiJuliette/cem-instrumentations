@@ -21,7 +21,7 @@ form.addEventListener('submit', async (e) => {
   const data = Object.fromEntries(formData.entries());
 
   try {
-    const response = await fetch('/api/mail.js', {
+    const response = await fetch('../api/contact', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(data),
