@@ -1,16 +1,3 @@
-// const form = document.getElementById('contact-form'); // On sélectionne le formulaire
-
-// form.addEventListener('submit', async (e) => {
-//   e.preventDefault(); // Empêche l'envoi classique (rechargement de page)
-
-//   const formData = new FormData(form); // Récupère les données du formulaire
-//   const data = Object.fromEntries(formData.entries()); // Convertit en objet JS
-
-//   console.log(data); // Exemple : { name: 'Alice', email: 'alice@gmail.com', message: 'Hello' }
-
-//   // ... ensuite on peut envoyer "data" vers le backend avec fetch()
-// });
-
 const form = document.getElementById('contact-form');
 const status = document.getElementById('status');
 
