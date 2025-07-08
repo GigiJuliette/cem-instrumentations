@@ -1,14 +1,46 @@
 @mixin flex-center {
   display: flex;
   align-items: center;
+  justify-content: center;
 }
 
 @mixin glass {
-  background: rgba(255, 255, 255, 0.123);
-  box-shadow: 0 4px 30px rgba(124, 104, 104, 0.295);
-  backdrop-filter: blur(2px);
+  // background: linear-gradient(260deg, rgba(20, 16, 18, .2) 0%, rgba(254, 254, 254, .1) 100%);
+  backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(1px);
-  border: #ee8f0b2f solid 1px;
+  border-radius: 30px;
+}
+
+@mixin bottom {
+  background: linear-gradient(0deg, rgba(20, 16, 18, .2) 0%, rgba(254, 254, 254, .1) 100%);
+}
+
+@mixin top {
+  background: linear-gradient(180deg, rgba(20, 16, 18, .2) 0%, rgba(254, 254, 254, .1) 100%);
+}
+
+@mixin left {
+  background: linear-gradient(280deg, rgba(20, 16, 18, .2) 0%, rgba(254, 254, 254, .1) 100%);
+}
+
+@mixin right {
+  background: linear-gradient(90deg, rgba(20, 16, 18, .2) 0%, rgba(254, 254, 254, .1) 100%);
+}
+
+@mixin top-left {
+  background: linear-gradient(316deg, rgba(20, 16, 18, .2) 0%, rgba(254, 254, 254, .1) 100%);
+}
+
+@mixin top-right {
+  background: linear-gradient(40deg, rgba(20, 16, 18, .2) 0%, rgba(254, 254, 254, .1) 100%);
+}
+
+@mixin bottom-left {
+  background: linear-gradient(205deg, rgba(20, 16, 18, .2) 0%, rgba(254, 254, 254, .1) 100%);
+}
+
+@mixin bottom-right {
+  background: linear-gradient(135deg, rgba(20, 16, 18, .2) 0%, rgba(254, 254, 254, .1) 100%);
 }
 
 @mixin darkglass {
@@ -28,6 +60,12 @@ $dark: #141012;
 :root {
   --marge: 50px;
   --img-size: 300px;
+  --inside-margin: calc(var(--marge) / 2);
+  --wrapper: 15%;
+  --bento-margin: var(--marge) var(--wrapper);
+  --title-fontsize: 64px;
+  --subtitle-fontsize: 32px;
+  --body-fontsize: 20px;
 }
 
 * {

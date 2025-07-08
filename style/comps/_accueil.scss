@@ -1,65 +1,197 @@
 @use '../base' as v;
 
-.acceuil-banner {
-  padding: 10px var(--marge);
-  margin: 2rem 0;
-  font-size: 30px;
-  background-image: url(../img/viaduc.jpg);
-  background-position: center;
-  background-size: cover;
-  background-attachment: fixed;
-  min-height: 20rem;
-  color: v.$white;
+
+
+
+
+// @keyframes roll {
+//   0% {
+//     font-size: 0px;
+//     opacity: 0;
+//     margin-left: -30px;
+//     margin-top: 0px;
+//     transform: rotate(-25deg);
+//   }
+
+//   3% {
+//     opacity: 1;
+//     transform: rotate(0deg);
+//   }
+
+//   5% {
+//     font-size: inherit;
+//     opacity: 1;
+//     margin-left: 0px;
+//     margin-top: 0px;
+//   }
+
+//   20% {
+//     font-size: inherit;
+//     opacity: 1;
+//     margin-left: 0px;
+//     margin-top: 0px;
+//     transform: rotate(0deg);
+//   }
+
+//   27% {
+//     font-size: 0px;
+//     opacity: 0.5;
+//     margin-left: 20px;
+//     margin-top: 100px;
+//   }
+
+//   100% {
+//     font-size: 0px;
+//     opacity: 0;
+//     margin-left: -30px;
+//     margin-top: 0px;
+//     transform: rotate(15deg);
+//   }
+// }
+
+.hero {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  margin: var(--marge);
-  border-radius: 30px;
-  box-shadow: 0 4px 30px rgba(124, 104, 104, 0.295);
-  border: #ee8f0b2f solid 1px;
+  justify-content: space-between;
+  gap: var(--marge);
+  margin: var(--bento-margin);
 
-  & h1 {
-    font-weight: 700;
-    font-size: 3em;
-    text-shadow: 1px 1px 0 #1410126e, 1px -1px 0 #1410126e, -1px 1px 0 #1410126e, -1px -1px 0 #1410126e, 1px 0px 0 #1410126e, 0px 1px 0 #1410126e, -1px 0px 0 #1410126e, 0px -1px 0 #1410126e;
+  &__1 {
+    display: flex;
+    flex-direction: column;
+
+    & strong {
+      font-size: var(--title-fontsize);
+      margin-bottom: var(--inside-margin);
+    }
+
+    & span {
+      font-size: var(--subtitle-fontsize);
+    }
   }
 
+  &__2 {
+    @include v.flex-center;
+  }
 }
 
-.pres-anim {
+.a {
+  margin: var(--bento-margin);
   display: flex;
+  justify-content: space-between;
+  height: calc(var(--img-size) * 1.5);
 
-  &__dropping-text {
-    display: inline-block;
-    margin-left: 15px;
+  &__1 {
+    height: inherit;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin-right: var(--inside-margin);
 
-    &>span {
-      font-size: 0px;
-      opacity: 0;
-      margin-left: -30px;
-      position: absolute;
-      text-shadow: 1px 1px 0 v.$orange, 1px -1px 0 v.$orange, -1px 1px 0 v.$orange, -1px -1px 0 v.$orange, 1px 0px 0 v.$orange, 0px 1px 0 v.$orange, -1px 0px 0 v.$orange, 0px -1px 0 v.$orange;
+    & .pres-anim {
+      height: auto;
+      @include v.glass;
+      @include v.top-right;
+      padding: var(--marge);
+      margin-bottom: var(--inside-margin);
+      display: flex;
+      font-size: var(--subtitle-fontsize);
 
-      &:nth-child(1) {
-        animation: roll 10s linear infinite 0s;
-      }
 
-      &:nth-child(2) {
-        animation: roll 10s linear infinite 2s;
-      }
+      &__dropping-text {
+        margin-left: 15px;
+        position: relative;
+        min-width: 500px;
 
-      &:nth-child(3) {
-        animation: roll 10s linear infinite 4s;
-      }
+        &>span {
+          display: inline-block;
+          position: absolute;
+          opacity: 0;
 
-      &:nth-child(4) {
-        animation: roll 10s linear infinite 6s;
-      }
+          &:nth-child(1) {
+            animation: roll 10s linear infinite 0s;
+          }
 
-      &:nth-child(5) {
-        animation: roll 10s linear infinite 8s;
+          &:nth-child(2) {
+            animation: roll 10s linear infinite 2s;
+          }
+
+          &:nth-child(3) {
+            animation: roll 10s linear infinite 4s;
+          }
+
+          &:nth-child(4) {
+            animation: roll 10s linear infinite 6s;
+          }
+
+          &:nth-child(5) {
+            animation: roll 10s linear infinite 8s;
+          }
+        }
       }
     }
+
+    & .viaduc {
+      height: 50%;
+      @include v.glass;
+      @include v.bottom-right;
+      padding: var(--marge);
+      position: relative;
+
+      & img {
+        position: absolute;
+        width: 150%;
+        top: -150px;
+        left: -380px;
+        z-index: 100;
+        transform: rotate(-4deg);
+      }
+    }
+  }
+
+  &__2 {
+    height: inherit;
+    @include v.glass;
+    @include v.left;
+    aspect-ratio: 1/1;
+    position: relative;
+
+    & #france {
+      margin: var(marge);
+      height: 100%;
+      width: 100%;
+      stroke: v.$white;
+      stroke-dasharray: 3500;
+      stroke-dashoffset: 3500;
+      animation: dash 2s linear forwards;
+      position: absolute;
+      bottom: 0;
+      right: 0;
+    }
+
+    & #regions {
+      z-index: -1;
+      fill: #ee8f0b3a;
+      position: absolute;
+      bottom: 3px;
+      left: 8px;
+      height: 48%;
+
+      animation: appear linear forwards .5s 2s;
+      opacity: 0;
+    }
+  }
+}
+
+@keyframes dash {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes appear {
+  to {
+    opacity: 1;
   }
 }
 
@@ -108,80 +240,44 @@
   }
 }
 
-.logo-slider {
-  color: v.$brown;
-  @include v.flex-center;
-  @include v.glass;
+.slider {
+  @include v.darkglass;
   height: var(--marge);
-  margin: var(--marge) 0;
+  margin: var(--bento-margin);
 }
 
-.geo {
-  height: fit-content;
-  margin: -3rem 0;
-  @include v.flex-center;
-  justify-content: space-between;
-  padding: var(--marge);
-  position: relative;
+.b {
+  &__grid {
+    display: grid;
+    margin: var(--bento-margin);
+    grid-template-columns: repeat(6, 1fr);
+    gap: var(--inside-margin);
 
-  & h3 {
-    min-width: 400px;
-    transform: translate(0, 200%);
-    color: v.$brown;
-  }
+    & div {
+      @include v.bottom;
+      @include v.glass;
+      aspect-ratio: 1/1;
 
-  & span {
-    position: absolute;
-    color: v.$brown;
-    border-radius: 10px;
-    border: v.$orange solid 1px;
-    padding: 5px 10px;
-    opacity: 0;
-    animation: appear .3s ease-in forwards;
-    animation-delay: var(--delay);
+    }
   }
 }
 
-@keyframes dash {
-  to {
-    stroke-dashoffset: 0;
+.c {
+  display: flex;
+  margin: var(--bento-margin);
+
+  &__text {
+    @include v.glass;
+    @include v.right;
+    margin-right: var(--inside-margin);
+    padding: var(--marge);
+    width: 60%;
+    height: inherit;
   }
-}
 
-svg {
-  height: fit-content;
-}
-
-#drawing-line {
-  transform: translate(10%, 28%);
-  stroke: v.$brown;
-  stroke-dasharray: 3100;
-  stroke-dashoffset: 3100;
-  animation: dash 2s linear forwards;
-}
-
-#france {
-  stroke: v.$brown;
-  stroke-dasharray: 3500;
-  stroke-dashoffset: 3500;
-  animation: dash 2s linear forwards 2s;
-  position: relative;
-}
-
-#regions {
-  z-index: -1;
-  fill: v.$orange;
-  position: absolute;
-  bottom: calc(var(--marge));
-  right: var(--marge);
-  width: fit-content;
-  height: 39%;
-  animation: appear linear forwards .5s 4s;
-  opacity: 0;
-}
-
-@keyframes appear {
-  to {
-    opacity: 1;
+  &__pic {
+    @include v.glass;
+    @include v.left;
+    width: 40%;
   }
 }

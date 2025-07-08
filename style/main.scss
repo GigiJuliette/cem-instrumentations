@@ -26,25 +26,47 @@ body {
   pointer-events: none;
 }
 
-
-
 .cta {
-  margin-left: 20px;
-  margin-right: 5px;
+  padding: var(--inside-margin);
+  font-size: 22px;
+  background: radial-gradient(circle,
+      v.$dark 0%,
+      v.$orange 100%) padding-box,
+    radial-gradient(circle,
+      v.$orange 0%,
+      v.$dark 100%) border-box;
+  border-radius: 50em;
+  background-size: 300% 300%;
+  border: 2px solid transparent;
+  animation: gradientShift 8s linear infinite;
+  cursor: pointer;
   text-decoration: none;
-  font-size: 20px;
-  color: v.$brown;
-  padding: 8px 10px;
   transition: .3s ease-in-out;
-  box-shadow:
-    0.3em 0.3em 0 0 v.$orange,
-    inset 0.3em 0.3em 0 0 v.$orange;
 
-  &:hover,
-  &:focus {
-    box-shadow:
-      0 0 0 0 v.$orange,
-      inset 5em 3.5em 0 0 v.$orange;
-    color: v.$white;
+  &:hover {
+    transform: scale(.98);
+    box-shadow: 0 4px 30px rgba(255, 255, 255, .3);
+  }
+}
+
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+
+  }
+
+  25% {
+    background-position: 100% 50%;
+
+  }
+
+  50% {
+    background-position: 0% 50%;
+
+  }
+
+  100% {
+    background-position: 0% 50%;
+
   }
 }
