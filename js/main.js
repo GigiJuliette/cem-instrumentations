@@ -1,13 +1,11 @@
 particlesJS.load('particles-js', './js/config.json');
 
-
+console.log("With love for my lovely dad");
 
 const obsFade = new IntersectionObserver((entries) => {
   entries.forEach((entry) => {
-    console.log(entry);
     if (entry.isIntersecting) {
-      entry.target.classList.add("fadeIn");
-      // entry.target.classList.remove("fadeOut");
+      entry.target.classList.add("xx");
     }
   });
 }, {
@@ -15,8 +13,7 @@ const obsFade = new IntersectionObserver((entries) => {
   rootMargin: "-15% 0px",
   threshold: 0
 });
-
-const fadeElement = document.querySelectorAll(".activite");
+const fadeElement = document.querySelectorAll(".anim");
 
 fadeElement.forEach((el) => obsFade.observe(el));
 

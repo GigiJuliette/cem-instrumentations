@@ -9,57 +9,59 @@ header {
   top: var(--marge);
   z-index: 10;
 
-  & nav {
-    @include v.flex-center;
-    justify-content: space-between;
-    gap: var(--marge);
-    @include v.darkglass;
-    position: sticky;
-    top: var(--marge);
-    z-index: 10;
-    padding: 0 var(--marge);
+}
 
-    @media only screen and (max-device-width : 500px) {
-      display: none;
+nav {
+  @include v.flex-center;
+  justify-content: space-between;
+  gap: var(--marge);
+  position: fixed;
+  padding: var(--marge);
+  right: 0;
+  top: 0;
+  z-index: 10;
+  flex-direction: column;
+
+  @media only screen and (max-device-width : 500px) {
+    display: none;
+  }
+
+  a {
+    color: v.$white;
+    text-decoration: none;
+    cursor: pointer;
+    display: inline-block;
+    padding: 15px 20px;
+    position: relative;
+
+    &:after {
+      bottom: 0;
+      content: "";
+      display: block;
+      height: 1px;
+      left: 50%;
+      position: absolute;
+      background: v.$orange;
+      transition: 0.3s ease;
+      width: 0;
     }
 
-    a {
-      color: v.$white;
-      text-decoration: none;
-      cursor: pointer;
-      display: inline-block;
-      padding: 15px 20px;
-      position: relative;
-
-      &:after {
-        bottom: 0;
-        content: "";
-        display: block;
-        height: 1px;
-        left: 50%;
-        position: absolute;
-        background: v.$orange;
-        transition: 0.3s ease;
-        width: 0;
-      }
-
-      &:hover:after {
-        width: 100%;
-        left: 0;
-      }
+    &:hover:after {
+      width: 100%;
+      left: 0;
     }
+  }
 
-    & .underline {
-      &:after {
-        bottom: 0;
-        content: "";
-        display: block;
-        height: 1px;
-        left: 0;
-        position: absolute;
-        background: v.$orange;
-        width: 100%;
-      }
+  & .underline {
+    &:after {
+      bottom: 0;
+      content: "";
+      display: block;
+      height: 1px;
+      left: 0;
+      position: absolute;
+      background: v.$orange;
+      width: 100%;
     }
   }
 }

@@ -74,21 +74,3 @@
     width: 80%;
   }
 }
-
-.fadeIn {
-  animation: fade-in .3s ease-out forwards;
-}
-
-.fadeOut {
-  animation: fade-out .3s ease-out both;
-}
-
-@keyframes fade-in {
-  from {
-    transform: scale(.9)
-  }
-
-  to {
-    transform: scale(1);
-  }
-}

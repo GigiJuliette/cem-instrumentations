@@ -12,11 +12,11 @@ export default async function handler(req, res) {
   try {
     const { data, error } = await resend.emails.send({
       from: 'CEM Contacts <onboarding@resend.dev>',
-      to: ['cem.instrumentations@gmail.com'], // change ça
+      to: ['gigialiasjuliette@gmail.com'],
       subject: `Message de ${name}`,
-      html: `<p><strong>Nom:</strong> ${name}</p>
-             <p><strong>Email:</strong> ${email}</p>
-             <p><strong>Message:</strong> ${message}</p>`,
+      html: `<p><strong>Nom :</strong> ${name}</p>
+             <p><strong>Email :</strong> ${email}</p>
+             <p><strong>Message :</strong> ${message}</p>`,
     });
 
     if (error) {
