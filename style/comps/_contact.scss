@@ -9,7 +9,6 @@
   & input,
   textarea {
     all: unset;
-    box-sizing: border-box;
     @include v.glass;
 
     &:focus {
@@ -34,10 +33,7 @@
   margin: var(--bento-margin);
 
   & h2 {
-    font-size: var(--title-fontsize);
-    height: calc(var(--title-fontsize) / 1.1);
-    overflow: hidden;
-    padding-left: var(--inside-margin);
+    @include v.fadetitle;
   }
 
   & button {

@@ -28,91 +28,18 @@
 
 .a {
   margin: var(--bento-margin);
-  display: flex;
-  justify-content: space-between;
-  height: calc(var(--img-size) * 1.5);
-
-  &__1 {
-    height: inherit;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    margin-right: var(--inside-margin);
-
-    & .pres-anim {
-      height: auto;
-      @include v.glass;
-      @include v.top-right;
-      padding: var(--marge);
-      margin-bottom: var(--inside-margin);
-      display: flex;
-      font-size: var(--subtitle-fontsize);
-
-
-      &__dropping-text {
-        margin-left: 15px;
-        position: relative;
-        min-width: 500px;
-
-        &>span {
-          display: inline-block;
-          position: absolute;
-          opacity: 0;
-
-          &:nth-child(1) {
-            animation: roll 10s linear infinite 0s;
-          }
-
-          &:nth-child(2) {
-            animation: roll 10s linear infinite 2s;
-          }
-
-          &:nth-child(3) {
-            animation: roll 10s linear infinite 4s;
-          }
-
-          &:nth-child(4) {
-            animation: roll 10s linear infinite 6s;
-          }
-
-          &:nth-child(5) {
-            animation: roll 10s linear infinite 8s;
-          }
-        }
-      }
-    }
-
-    & .viaduc {
-      height: 50%;
-      @include v.glass;
-      @include v.bottom-right;
-      padding: var(--marge);
-      position: relative;
-
-      @media (max-width:950px) {
-        display: none;
-      }
-
-      & img {
-        position: absolute;
-        width: 150%;
-        top: -150px;
-        left: -380px;
-        z-index: 100;
-        transform: rotate(-4deg);
-      }
-    }
-  }
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  grid-template-rows: auto auto 150px 15rem;
 
   &__2 {
-    height: inherit;
+    grid-area: 2 / 2 / 4 / 3;
     @include v.glass;
     @include v.left;
     position: relative;
-    aspect-ratio: 1/1;
 
     & #france {
-      margin: var(marge);
+      padding: var(--inside-margin);
       height: 100%;
       width: 100%;
       stroke: v.$white;
@@ -130,13 +57,88 @@
       position: absolute;
       bottom: 3px;
       left: 8px;
-      height: 48%;
+      // height: 48%;
 
-      animation: appear linear forwards .5s 2s;
+      // animation: appear linear forwards .5s 2s;
       opacity: 0;
     }
   }
+
+  & .about {
+    grid-area: 2 / 1 / 4 / 2;
+
+    & h2 {
+      @include v.fadetitle;
+    }
+
+    &__text {
+      @include v.glass;
+      @include v.right;
+      margin-right: var(--inside-margin);
+      padding: var(--marge);
+
+    }
+  }
+
+  & .viaduc {
+    // background: rgba(0, 0, 255, 0.678);
+    grid-area: 3 / 1 /5 / 3;
+    position: relative;
+
+    & img {
+      // background: rgba(255, 0, 0, 0.253);
+      position: absolute;
+      height: 200%;
+      right: 0;
+      transform: rotate(-2deg);
+    }
+  }
 }
+
+.pres-anim {
+  grid-area: 1 / 1 / 2 / 3;
+  @include v.glass;
+  @include v.right;
+  padding: var(--marge);
+  font-size: var(--subtitle-fontsize);
+  margin-bottom: var(--inside-margin);
+  display: flex;
+
+
+  &__dropping-text {
+    margin-left: 15px;
+    position: relative;
+    min-width: 500px;
+
+    &>span {
+      display: inline-block;
+      position: absolute;
+      opacity: 0;
+      width: max-content;
+
+      &:nth-child(1) {
+        animation: roll 10s linear infinite 0s;
+      }
+
+      &:nth-child(2) {
+        animation: roll 10s linear infinite 2s;
+      }
+
+      &:nth-child(3) {
+        animation: roll 10s linear infinite 4s;
+      }
+
+      &:nth-child(4) {
+        animation: roll 10s linear infinite 6s;
+      }
+
+      &:nth-child(5) {
+        animation: roll 10s linear infinite 8s;
+      }
+    }
+  }
+}
+
 
 @keyframes dash {
   to {
@@ -192,21 +194,5 @@
     margin-left: -30px;
     margin-top: 0px;
     transform: rotate(15deg);
-  }
-}
-
-.b {
-  &__grid {
-    display: grid;
-    margin: var(--bento-margin);
-    grid-template-columns: repeat(6, 1fr);
-    gap: var(--inside-margin);
-
-    & div {
-      @include v.bottom;
-      @include v.glass;
-      aspect-ratio: 1/1;
-
-    }
   }
 }

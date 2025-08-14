@@ -14,47 +14,22 @@
   box-sizing: border-box;
 }
 
+@media (max-width: 1200px) {
+  :root {
+    --title-fontsize: 44px;
+    --wrapper: 10em;
+    --body-fontsize: 16px;
+  }
+}
 @media (max-width: 900px) {
   :root {
     --img-size: 250px;
-    --title-fontsize: 44px;
     --wrapper: 2em;
     --bento-margin: var(--marge) var(--wrapper);
     --marge: 40px;
     --inside-margin: calc(var(--marge) / 2);
   }
 }
-.about {
-  margin: var(--bento-margin);
-}
-.about h2 {
-  font-size: var(--title-fontsize);
-  height: calc(var(--title-fontsize) / 1.1);
-  overflow: hidden;
-  padding-left: var(--inside-margin);
-}
-.about__grid {
-  display: grid;
-  grid-template-columns: 2fr 1fr;
-  grid-template-rows: auto;
-}
-.about__grid__text {
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(1px);
-  border-radius: 30px;
-  background: linear-gradient(90deg, rgba(20, 16, 18, 0.2) 0%, rgba(254, 254, 254, 0.1) 100%);
-  margin-right: var(--inside-margin);
-  padding: var(--marge);
-  grid-area: 1/1/2/2;
-}
-.about__grid__pic {
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(1px);
-  border-radius: 30px;
-  background: linear-gradient(280deg, rgba(20, 16, 18, 0.2) 0%, rgba(254, 254, 254, 0.1) 100%);
-  grid-area: 1/2/2/3;
-}
-
 .hero {
   display: flex;
   flex-direction: column;
@@ -81,86 +56,20 @@
 
 .a {
   margin: var(--bento-margin);
-  display: flex;
-  justify-content: space-between;
-  height: calc(var(--img-size) * 1.5);
-}
-.a__1 {
-  height: inherit;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  margin-right: var(--inside-margin);
-}
-.a__1 .pres-anim {
-  height: auto;
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(1px);
-  border-radius: 30px;
-  background: linear-gradient(40deg, rgba(20, 16, 18, 0.2) 0%, rgba(254, 254, 254, 0.1) 100%);
-  padding: var(--marge);
-  margin-bottom: var(--inside-margin);
-  display: flex;
-  font-size: var(--subtitle-fontsize);
-}
-.a__1 .pres-anim__dropping-text {
-  margin-left: 15px;
-  position: relative;
-  min-width: 500px;
-}
-.a__1 .pres-anim__dropping-text > span {
-  display: inline-block;
-  position: absolute;
-  opacity: 0;
-}
-.a__1 .pres-anim__dropping-text > span:nth-child(1) {
-  animation: roll 10s linear infinite 0s;
-}
-.a__1 .pres-anim__dropping-text > span:nth-child(2) {
-  animation: roll 10s linear infinite 2s;
-}
-.a__1 .pres-anim__dropping-text > span:nth-child(3) {
-  animation: roll 10s linear infinite 4s;
-}
-.a__1 .pres-anim__dropping-text > span:nth-child(4) {
-  animation: roll 10s linear infinite 6s;
-}
-.a__1 .pres-anim__dropping-text > span:nth-child(5) {
-  animation: roll 10s linear infinite 8s;
-}
-.a__1 .viaduc {
-  height: 50%;
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(1px);
-  border-radius: 30px;
-  background: linear-gradient(135deg, rgba(20, 16, 18, 0.2) 0%, rgba(254, 254, 254, 0.1) 100%);
-  padding: var(--marge);
-  position: relative;
-}
-@media (max-width: 950px) {
-  .a__1 .viaduc {
-    display: none;
-  }
-}
-.a__1 .viaduc img {
-  position: absolute;
-  width: 150%;
-  top: -150px;
-  left: -380px;
-  z-index: 100;
-  transform: rotate(-4deg);
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  grid-template-rows: auto auto 150px 15rem;
 }
 .a__2 {
-  height: inherit;
+  grid-area: 2/2/4/3;
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(1px);
   border-radius: 30px;
   background: linear-gradient(280deg, rgba(20, 16, 18, 0.2) 0%, rgba(254, 254, 254, 0.1) 100%);
   position: relative;
-  aspect-ratio: 1/1;
 }
 .a__2 #france {
-  margin: var(marge);
+  padding: var(--inside-margin);
   height: 100%;
   width: 100%;
   stroke: #fefefe;
@@ -177,9 +86,72 @@
   position: absolute;
   bottom: 3px;
   left: 8px;
-  height: 48%;
-  animation: appear linear forwards 0.5s 2s;
   opacity: 0;
+}
+.a .about {
+  grid-area: 2/1/4/2;
+}
+.a .about h2 {
+  font-size: var(--title-fontsize);
+  height: calc(var(--title-fontsize) / 1.1);
+  z-index: -1;
+  padding-left: var(--inside-margin);
+}
+.a .about__text {
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(1px);
+  border-radius: 30px;
+  background: linear-gradient(90deg, rgba(20, 16, 18, 0.2) 0%, rgba(254, 254, 254, 0.1) 100%);
+  margin-right: var(--inside-margin);
+  padding: var(--marge);
+}
+.a .viaduc {
+  grid-area: 3/1/5/3;
+  position: relative;
+}
+.a .viaduc img {
+  position: absolute;
+  height: 200%;
+  right: 0;
+  transform: rotate(-2deg);
+}
+
+.pres-anim {
+  grid-area: 1/1/2/3;
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(1px);
+  border-radius: 30px;
+  background: linear-gradient(90deg, rgba(20, 16, 18, 0.2) 0%, rgba(254, 254, 254, 0.1) 100%);
+  padding: var(--marge);
+  font-size: var(--subtitle-fontsize);
+  margin-bottom: var(--inside-margin);
+  display: flex;
+}
+.pres-anim__dropping-text {
+  margin-left: 15px;
+  position: relative;
+  min-width: 500px;
+}
+.pres-anim__dropping-text > span {
+  display: inline-block;
+  position: absolute;
+  opacity: 0;
+  width: max-content;
+}
+.pres-anim__dropping-text > span:nth-child(1) {
+  animation: roll 10s linear infinite 0s;
+}
+.pres-anim__dropping-text > span:nth-child(2) {
+  animation: roll 10s linear infinite 2s;
+}
+.pres-anim__dropping-text > span:nth-child(3) {
+  animation: roll 10s linear infinite 4s;
+}
+.pres-anim__dropping-text > span:nth-child(4) {
+  animation: roll 10s linear infinite 6s;
+}
+.pres-anim__dropping-text > span:nth-child(5) {
+  animation: roll 10s linear infinite 8s;
 }
 
 @keyframes dash {
@@ -231,20 +203,6 @@
     transform: rotate(15deg);
   }
 }
-.b__grid {
-  display: grid;
-  margin: var(--bento-margin);
-  grid-template-columns: repeat(6, 1fr);
-  gap: var(--inside-margin);
-}
-.b__grid div {
-  background: linear-gradient(0deg, rgba(20, 16, 18, 0.2) 0%, rgba(254, 254, 254, 0.1) 100%);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(1px);
-  border-radius: 30px;
-  aspect-ratio: 1/1;
-}
-
 #contact-form {
   display: flex;
   flex-direction: column;
@@ -253,7 +211,6 @@
 #contact-form input,
 #contact-form textarea {
   all: unset;
-  box-sizing: border-box;
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(1px);
   border-radius: 30px;
@@ -279,7 +236,7 @@
 #contact h2 {
   font-size: var(--title-fontsize);
   height: calc(var(--title-fontsize) / 1.1);
-  overflow: hidden;
+  z-index: -1;
   padding-left: var(--inside-margin);
 }
 #contact button {
@@ -362,7 +319,7 @@ nav .underline:after {
 .metier h2 {
   font-size: var(--title-fontsize);
   height: calc(var(--title-fontsize) / 1.1);
-  overflow: hidden;
+  z-index: -1;
   padding-left: var(--inside-margin);
 }
 
@@ -477,10 +434,9 @@ nav .underline:after {
   margin: var(--bento-margin);
 }
 .a-s h2 {
-  margin-left: var(--inside-margin);
   font-size: var(--subtitle-fontsize);
-  height: calc(var(--subtitle-fontsize) / 1.1);
-  overflow: hidden;
+  z-index: -1;
+  padding-left: var(--inside-margin);
 }
 .a-s .slider {
   width: 100%;
