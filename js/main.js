@@ -1,4 +1,7 @@
+
+// window.addEventListener("resize", () => {
 particlesJS.load('particles-js', './js/config.json');
+// });
 
 console.log("With love for my lovely dad");
 

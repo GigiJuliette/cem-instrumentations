@@ -32,11 +32,6 @@
   justify-content: space-between;
   height: calc(var(--img-size) * 1.5);
 
-  @media (max-width:950px) {
-    flex-direction: column;
-    height: auto;
-  }
-
   &__1 {
     height: inherit;
     width: 100%;
@@ -213,25 +208,5 @@
       aspect-ratio: 1/1;
 
     }
-  }
-}
-
-.c {
-  display: flex;
-  margin: var(--bento-margin);
-
-  &__text {
-    @include v.glass;
-    @include v.right;
-    margin-right: var(--inside-margin);
-    padding: var(--marge);
-    width: 60%;
-    height: inherit;
-  }
-
-  &__pic {
-    @include v.glass;
-    @include v.left;
-    width: 40%;
   }
 }
