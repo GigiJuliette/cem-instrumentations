@@ -79,10 +79,10 @@ $dark: #141012;
   box-sizing: border-box;
 }
 
-@media (max-width: 1200px) {
+@media (max-width: 1350px) {
   :root {
 
-    --title-fontsize: 44px;
+    --title-fontsize: 50px;
     --wrapper: 10em;
     --body-fontsize: 16px;
   }
@@ -90,6 +90,7 @@ $dark: #141012;
 
 @media (max-width: 900px) {
   :root {
+    --title-fontsize: 44px;
     --img-size: 250px;
     --wrapper: 2em;
     --bento-margin: var(--marge) var(--wrapper);
