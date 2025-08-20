@@ -4,8 +4,8 @@
   --inside-margin: calc(var(--marge) / 2);
   --wrapper: 15%;
   --bento-margin: var(--marge) var(--wrapper);
-  --title-fontsize: 64px;
-  --subtitle-fontsize: 28px;
+  --title-fontsize: 44px;
+  --subtitle-fontsize: 25px;
   --body-fontsize: 20px;
 }
 
@@ -23,7 +23,7 @@
 }
 @media (max-width: 900px) {
   :root {
-    --title-fontsize: 44px;
+    --title-fontsize: 34px;
     --img-size: 250px;
     --wrapper: 2em;
     --bento-margin: var(--marge) var(--wrapper);
@@ -60,6 +60,29 @@
   grid-template-columns: 1fr 3fr;
   grid-template-rows: auto auto var(--img-size);
 }
+.a__1 {
+  grid-area: 1/1/2/3;
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(1px);
+  border-radius: 30px;
+  background: linear-gradient(280deg, rgba(20, 16, 18, 0.2) 0%, rgba(254, 254, 254, 0.1) 100%);
+  padding: calc(var(--marge) / 1.5);
+  font-size: var(--subtitle-fontsize);
+  margin-bottom: var(--inside-margin);
+}
+.a__1__dropping-text {
+  margin-left: 15px;
+  position: relative;
+  min-width: 500px;
+  display: inline;
+}
+.a__1__dropping-text > span {
+  position: absolute;
+  opacity: 0;
+  width: max-content;
+  animation: roll 10s linear infinite;
+  animation-delay: var(--delay);
+}
 .a__2 {
   grid-area: 3/1/4/2;
   backdrop-filter: blur(20px);
@@ -91,6 +114,17 @@
   animation: appear linear forwards 0.5s 2s;
   opacity: 0;
 }
+.a__3 {
+  grid-area: 3/2/4/3;
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(1px);
+  border-radius: 30px;
+  background: linear-gradient(90deg, rgba(20, 16, 18, 0.2) 0%, rgba(254, 254, 254, 0.1) 100%);
+  margin-left: var(--inside-margin);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 .a .about {
   grid-area: 2/1/3/3;
   margin-bottom: var(--inside-margin);
@@ -121,31 +155,28 @@
   transform: rotate(-3deg);
 }
 
-.pres-anim {
-  grid-area: 1/1/2/3;
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(1px);
-  border-radius: 30px;
-  background: linear-gradient(280deg, rgba(20, 16, 18, 0.2) 0%, rgba(254, 254, 254, 0.1) 100%);
-  padding: calc(var(--marge) / 1.5);
-  font-size: var(--subtitle-fontsize);
-  margin-bottom: var(--inside-margin);
-  display: flex;
+@media (max-width: 950px) {
+  .a {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto var(--img-size) auto;
+  }
+  .a__1 {
+    grid-area: 1/1/2/2;
+  }
+  .a__2 {
+    grid-area: 3/1/4/2;
+  }
+  .a .about {
+    grid-area: 2/1/3/2;
+  }
+  .a__3 {
+    grid-area: 4/1/5/2;
+    margin-left: 0;
+  }
+  .a .viaduc {
+    display: none;
+  }
 }
-.pres-anim__dropping-text {
-  margin-left: 15px;
-  position: relative;
-  min-width: 500px;
-}
-.pres-anim__dropping-text > span {
-  display: inline-block;
-  position: absolute;
-  opacity: 0;
-  width: max-content;
-  animation: roll 10s linear infinite;
-  animation-delay: var(--delay);
-}
-
 @keyframes dash {
   to {
     stroke-dashoffset: 0;
@@ -402,7 +433,7 @@ nav .underline:after {
   width: var(--marge);
 }
 
-@media (max-width: 900px) and (orientation: portrait) {
+@media (max-width: 900px) {
   .activite {
     grid-template-columns: 1fr;
     grid-template-rows: var(--img-size) auto;

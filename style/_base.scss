@@ -69,8 +69,8 @@ $dark: #141012;
   --inside-margin: calc(var(--marge) / 2);
   --wrapper: 15%;
   --bento-margin: var(--marge) var(--wrapper);
-  --title-fontsize: 64px;
-  --subtitle-fontsize: 28px;
+  --title-fontsize: 44px;
+  --subtitle-fontsize: 25px;
   --body-fontsize: 20px;
 }
 
@@ -90,7 +90,7 @@ $dark: #141012;
 
 @media (max-width: 900px) {
   :root {
-    --title-fontsize: 44px;
+    --title-fontsize: 34px;
     --img-size: 250px;
     --wrapper: 2em;
     --bento-margin: var(--marge) var(--wrapper);

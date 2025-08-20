@@ -31,6 +31,31 @@
   grid-template-columns: 1fr 3fr;
   grid-template-rows: auto auto var(--img-size);
 
+  &__1 {
+    grid-area: 1 / 1 / 2 / 3;
+    @include v.glass;
+    @include v.left;
+    padding: calc(var(--marge)/1.5);
+    font-size: var(--subtitle-fontsize);
+    margin-bottom: var(--inside-margin);
+
+    &__dropping-text {
+      margin-left: 15px;
+      position: relative;
+      min-width: 500px;
+      display: inline;
+
+      &>span {
+        position: absolute;
+        opacity: 0;
+        width: max-content;
+
+        animation: roll 10s linear infinite;
+        animation-delay: var(--delay);
+      }
+    }
+  }
+
   &__2 {
     grid-area: 3 / 1 / 4 / 2;
     @include v.glass;
@@ -61,6 +86,17 @@
       animation: appear linear forwards .5s 2s;
       opacity: 0;
     }
+  }
+
+  &__3 {
+    grid-area: 3/ 2 / 4 / 3;
+    @include v.glass;
+    @include v.right;
+    margin-left: var(--inside-margin);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
   & .about {
@@ -94,32 +130,34 @@
   }
 }
 
-.pres-anim {
-  grid-area: 1 / 1 / 2 / 3;
-  @include v.glass;
-  @include v.left;
-  padding: calc(var(--marge)/1.5);
-  font-size: var(--subtitle-fontsize);
-  margin-bottom: var(--inside-margin);
-  display: flex;
+@media(max-width:950px) {
+  .a {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto var(--img-size) auto;
 
+    &__1 {
+      grid-area: 1 / 1 / 2 / 2;
+    }
 
-  &__dropping-text {
-    margin-left: 15px;
-    position: relative;
-    min-width: 500px;
+    &__2 {
+      grid-area: 3 / 1 / 4 / 2;
+    }
 
-    &>span {
-      display: inline-block;
-      position: absolute;
-      opacity: 0;
-      width: max-content;
+    & .about {
+      grid-area: 2 / 1 / 3 / 2;
+    }
 
-      animation: roll 10s linear infinite;
-      animation-delay: var(--delay);
+    &__3 {
+      grid-area: 4 / 1 / 5 / 2;
+      margin-left: 0;
+    }
+
+    & .viaduc {
+      display: none;
     }
   }
 }
+
 
 
 @keyframes dash {

@@ -115,7 +115,7 @@
   }
 }
 
-@media (max-width: 900px) and (orientation: portrait) {
+@media (max-width: 900px) {
   .activite {
     grid-template-columns: 1fr;
     grid-template-rows: var(--img-size) auto;
