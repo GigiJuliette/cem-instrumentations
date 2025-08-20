@@ -36,7 +36,30 @@
     @include v.fadetitle;
   }
 
+  & h3 {
+    @include v.fadetitle2;
+  }
+
   & button {
     width: max-content;
+  }
+
+  & .phonemail {
+    @include v.glass;
+    @include v.left;
+    padding: var(--inside-margin);
+    display: flex;
+    flex-direction: column;
+    gap: calc(var(--inside-margin)/1.5);
+
+    div {
+      display: flex;
+    }
+
+    img {
+      width: 30px;
+      margin-right: 10px;
+      transform: translateY(-5px);
+    }
   }
 }

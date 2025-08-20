@@ -262,8 +262,32 @@
   z-index: -1;
   padding-left: var(--inside-margin);
 }
+#contact h3 {
+  font-size: var(--subtitle-fontsize);
+  height: calc(var(--subtitle-fontsize) / 1.1);
+  z-index: -1;
+  padding-left: var(--inside-margin);
+}
 #contact button {
   width: max-content;
+}
+#contact .phonemail {
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(1px);
+  border-radius: 30px;
+  background: linear-gradient(280deg, rgba(20, 16, 18, 0.2) 0%, rgba(254, 254, 254, 0.1) 100%);
+  padding: var(--inside-margin);
+  display: flex;
+  flex-direction: column;
+  gap: calc(var(--inside-margin) / 1.5);
+}
+#contact .phonemail div {
+  display: flex;
+}
+#contact .phonemail img {
+  width: 30px;
+  margin-right: 10px;
+  transform: translateY(-5px);
 }
 
 header {
@@ -458,6 +482,7 @@ nav .underline:after {
 }
 .a-s h2 {
   font-size: var(--subtitle-fontsize);
+  height: calc(var(--subtitle-fontsize) / 1.1);
   z-index: -1;
   padding-left: var(--inside-margin);
 }
@@ -504,6 +529,10 @@ h3 {
   padding: 0;
   margin: 0;
   text-decoration: none;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {

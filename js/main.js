@@ -3,7 +3,7 @@
 particlesJS.load('particles-js', './js/config.json');
 // });
 
-console.log("With love for my lovely dad");
+console.log("Made with love :)");
 
 const obsFade = new IntersectionObserver((entries) => {
   entries.forEach((entry) => {
@@ -45,3 +45,30 @@ imgChange(arrowM, imgM, "micropieux", "png");
 imgChange(arrowTa, imgTa, "ta", "jpg");
 imgChange(arrowCl, imgCl, "cl", "jpg");
 imgChange(arrowEs, imgEs, "es", "jpg");
+
+//
+
+
+
+const sections = document.querySelectorAll("section");
+console.log(sections);
+
+const observerCallback = (entries) => {
+  entries.forEach(entry => {
+
+    const navItem = document.querySelector(`.${entry.target.dataset.nav}`)
+
+    if (entry.isIntersecting) {
+      navItem.classList.add('underline');
+    } else {
+      navItem.classList.remove('underline');
+    }
+  });
+};
+
+const observer = new IntersectionObserver(observerCallback, {
+  threshold: 0.5
+});
+
+
+sections.forEach((section) => observer.observe(section));

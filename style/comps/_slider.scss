@@ -4,9 +4,7 @@
   margin: var(--bento-margin);
 
   & h2 {
-    font-size: var(--subtitle-fontsize);
-    z-index: -1;
-    padding-left: var(--inside-margin);
+    @include v.fadetitle2;
   }
 
   & .slider {

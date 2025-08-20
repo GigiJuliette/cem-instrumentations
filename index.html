@@ -22,12 +22,12 @@
     <img src=" ./img/CEM-LOGO-colored.svg">
   </header>
   <nav>
-    <a class="underline" href="./index.html">Accueil</a>
-    <a href="#about">A Propos</a>
-    <a href="#metier">Activites</a>
-    <a href="#contact">Contact</a>
+    <a class="indexNav" href="#hero">Accueil</a>
+    <a class="aboutNav" href="#about">A Propos</a>
+    <a class="metierNav" href="#metier">Activites</a>
+    <a class="contactNav" href="#contact">Contact</a>
   </nav>
-  <section class="hero">
+  <section data-nav="indexNav" id="hero" class="hero">
     <div class="hero__1">
       <strong>Mesurer, contrôler, maîtriser,<br> l’instrumentation de précision.</strong>
       <span>Depuis plus de 20
@@ -37,7 +37,7 @@
       <a href="#contact" class="cta">Contactez-nous</a>
     </div>
   </section>
-  <section class="a">
+  <section data-nav="aboutNav" class="a">
     <div class="a__1 anim">
       Spécialiste d'essais destructifs et du contrôle sur
       <div class="a__1__dropping-text">
@@ -106,7 +106,7 @@
     </div>
   </div>
 
-  <section class="metier" id="metier">
+  <section data-nav="metierNav" class="metier" id="metier">
     <h2>Notre Métier</h2>
     <div class="activite anim left">
       <img id="imgM" src="./img/micropieux1.png" alt="photo micropieux">
@@ -169,11 +169,24 @@
       </div>
     </div>
   </section>
-  <section id="contact">
+  <section data-nav="contactNav" id="contact">
     <h2>Contactez-nous</h2>
-    <form id="contact-form">
-      <input class="anim" type="text" name="name" placeholder="Nom" required />
-      <input class="anim" type="email" name="email" placeholder="Email" required />
+    <div class="phonemail anim">
+      <div class="phonemail__1">
+        <img src="img/phone.svg"><span> +33 6 09 28 02 97 | Gérant M. De Méo Pascal</span>
+      </div>
+      <div class="phonemail__2">
+        <img src="img/phone.svg"><span> +33 77 73 43 16 | Ingénieur travaux M.Jalabert Matthias </span>
+      </div>
+      <div class="phonemail__3">
+        <img src="img/mail.svg"><span> cem.instrumentations@gmail.com
+        </span>
+      </div>
+    </div>
+    <h3>Nous écrire</h3>
+    <form id="contact-form" class="anim">
+      <input class="anim input1" type="text" name="name" placeholder="Nom" required />
+      <input class="anim input2" type="email" name="email" placeholder="Email" required />
       <textarea class="anim" name="message" placeholder="Votre message" required></textarea>
       <button class="cta" type="submit">Envoyer</button>
       <p id="status"></p>

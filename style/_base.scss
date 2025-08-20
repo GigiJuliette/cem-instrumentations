@@ -58,6 +58,13 @@
   padding-left: var(--inside-margin);
 }
 
+@mixin fadetitle2 {
+  font-size: var(--subtitle-fontsize);
+  height: calc(var(--subtitle-fontsize) / 1.1);
+  z-index: -1;
+  padding-left: var(--inside-margin);
+}
+
 $orange : #ee8f0b88;
 $brown: #563f49;
 $white: #fefefe;
