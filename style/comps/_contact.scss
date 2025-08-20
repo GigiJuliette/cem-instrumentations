@@ -26,8 +26,16 @@
     padding: calc(var(--inside-margin) / 2) var(--inside-margin);
     max-width: 30%;
     @include v.left;
+
+    @media(max-width:900px) {
+
+      max-width: 100%;
+
+    }
   }
 }
+
+
 
 #contact {
   margin: var(--bento-margin);
