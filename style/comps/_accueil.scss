@@ -23,6 +23,12 @@
   &__2 {
     @include v.flex-center;
   }
+
+  @media (max-width: 900px) {
+
+    text-align: center;
+
+  }
 }
 
 .a {
@@ -114,6 +120,12 @@
 
       & p {
         max-width: 50%;
+
+        @media(max-width:900px) {
+
+          max-width: 100%;
+
+        }
       }
     }
   }

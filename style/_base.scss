@@ -56,6 +56,13 @@
   height: calc(var(--title-fontsize) / 1.1);
   z-index: -1;
   padding-left: var(--inside-margin);
+
+  @media (max-width: 900px) {
+    height: var(--title-font-size);
+    text-align: center;
+    margin: var(--inside-margin);
+    padding-left: 0;
+  }
 }
 
 @mixin fadetitle2 {
@@ -63,6 +70,13 @@
   height: calc(var(--subtitle-fontsize) / 1.1);
   z-index: -1;
   padding-left: var(--inside-margin);
+
+  @media (max-width: 900px) {
+    height: var(--subtitle-font-size);
+    text-align: center;
+    margin: calc(var(--inside-margin)/1.5);
+    padding-left: 0;
+  }
 }
 
 $orange : #ee8f0b88;
@@ -103,5 +117,11 @@ $dark: #141012;
     --bento-margin: var(--marge) var(--wrapper);
     --marge: 40px;
     --inside-margin: calc(var(--marge) / 2);
+  }
+}
+
+@media (max-width: 700px) {
+  :root {
+    --title-fontsize: 27px;
   }
 }
