@@ -33,7 +33,7 @@
   margin: var(--bento-margin);
   display: grid;
   grid-template-columns: 1fr 3fr;
-  grid-template-rows: auto auto var(--img-size);
+  grid-template-rows: auto auto auto;
 
   &__1 {
     grid-area: 1 / 1 / 2 / 3;
@@ -61,6 +61,8 @@
   }
 
   &__2 {
+    height: var(--img-size);
+    aspect-ratio: 1/1;
     grid-area: 3 / 1 / 4 / 2;
     @include v.glass;
     @include v.left;
@@ -68,6 +70,7 @@
     z-index: 3;
 
     & #france {
+      position: absolute;
       padding: var(--inside-margin);
       height: 100%;
       width: 100%;
@@ -75,18 +78,18 @@
       stroke-dasharray: 3500;
       stroke-dashoffset: 3500;
       animation: dash 2s linear forwards;
-      position: absolute;
-      bottom: 0;
-      right: 0;
     }
 
     & #regions {
+      padding: var(--inside-margin);
+      position: absolute;
+      height: 55%;
+      width: fit-content;
+      bottom: 0;
+      right: 6px;
       z-index: -1;
       fill: #ee8f0b3a;
-      position: absolute;
-      height: 40%;
-      right: -160px;
-      bottom: var(--inside-margin);
+      justify-self: center;
       animation: appear linear forwards .5s 2s;
       opacity: 0;
     }
