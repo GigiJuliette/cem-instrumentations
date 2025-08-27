@@ -81,15 +81,15 @@
   margin-bottom: var(--inside-margin);
 }
 .a__1__dropping-text {
-  margin-left: 15px;
+  margin-left: 10px;
   position: relative;
-  min-width: 500px;
   display: inline;
 }
 .a__1__dropping-text > span {
   position: absolute;
   opacity: 0;
   width: max-content;
+  font-size: var(--subtitle-fontsize);
   animation: roll 10s linear infinite;
   animation-delay: var(--delay);
 }
@@ -228,13 +228,13 @@
     transform: rotate(0deg);
   }
   5% {
-    font-size: inherit;
+    font-size: var(--text-fontsize);
     opacity: 1;
     margin-left: 0px;
     margin-top: 0px;
   }
   20% {
-    font-size: inherit;
+    font-size: var(--text-fontsize);
     opacity: 1;
     margin-left: 0px;
     margin-top: 0px;

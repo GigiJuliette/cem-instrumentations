@@ -44,16 +44,15 @@
     margin-bottom: var(--inside-margin);
 
     &__dropping-text {
-      margin-left: 15px;
+      margin-left: 10px;
       position: relative;
-      min-width: 500px;
       display: inline;
 
       &>span {
         position: absolute;
         opacity: 0;
         width: max-content;
-
+        font-size: var(--subtitle-fontsize);
         animation: roll 10s linear infinite;
         animation-delay: var(--delay);
       }
@@ -207,14 +206,14 @@
   }
 
   5% {
-    font-size: inherit;
+    font-size: var(--text-fontsize);
     opacity: 1;
     margin-left: 0px;
     margin-top: 0px;
   }
 
   20% {
-    font-size: inherit;
+    font-size: var(--text-fontsize);
     opacity: 1;
     margin-left: 0px;
     margin-top: 0px;
