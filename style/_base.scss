@@ -1,3 +1,8 @@
+$orange : #ee8f0b88;
+$brown: #563f49;
+$white: #fefefe;
+$dark: #141012;
+
 @mixin flex-center {
   display: flex;
   align-items: center;
@@ -53,12 +58,10 @@
 
 @mixin fadetitle {
   font-size: var(--title-fontsize);
-  height: calc(var(--title-fontsize) / 1.1);
-  z-index: -1;
+  z-index: 2;
   padding-left: var(--inside-margin);
 
   @media (max-width: 900px) {
-    height: var(--title-font-size);
     text-align: center;
     margin: var(--inside-margin);
     padding-left: 0;
@@ -67,22 +70,18 @@
 
 @mixin fadetitle2 {
   font-size: var(--subtitle-fontsize);
-  height: calc(var(--subtitle-fontsize) / 1.1);
-  z-index: -1;
+
+  z-index: 2;
   padding-left: var(--inside-margin);
 
   @media (max-width: 900px) {
-    height: var(--subtitle-font-size);
+
     text-align: center;
     margin: calc(var(--inside-margin)/1.5);
     padding-left: 0;
   }
 }
 
-$orange : #ee8f0b88;
-$brown: #563f49;
-$white: #fefefe;
-$dark: #141012;
 
 :root {
   --marge: 50px;

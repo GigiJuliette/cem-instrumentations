@@ -141,13 +141,11 @@
 }
 .a .about h2 {
   font-size: var(--title-fontsize);
-  height: calc(var(--title-fontsize) / 1.1);
-  z-index: -1;
+  z-index: 2;
   padding-left: var(--inside-margin);
 }
 @media (max-width: 900px) {
   .a .about h2 {
-    height: var(--title-font-size);
     text-align: center;
     margin: var(--inside-margin);
     padding-left: 0;
@@ -293,13 +291,11 @@
 }
 #contact h2 {
   font-size: var(--title-fontsize);
-  height: calc(var(--title-fontsize) / 1.1);
-  z-index: -1;
+  z-index: 2;
   padding-left: var(--inside-margin);
 }
 @media (max-width: 900px) {
   #contact h2 {
-    height: var(--title-font-size);
     text-align: center;
     margin: var(--inside-margin);
     padding-left: 0;
@@ -307,13 +303,11 @@
 }
 #contact h3 {
   font-size: var(--subtitle-fontsize);
-  height: calc(var(--subtitle-fontsize) / 1.1);
-  z-index: -1;
+  z-index: 2;
   padding-left: var(--inside-margin);
 }
 @media (max-width: 900px) {
   #contact h3 {
-    height: var(--subtitle-font-size);
     text-align: center;
     margin: calc(var(--inside-margin) / 1.5);
     padding-left: 0;
@@ -344,7 +338,7 @@
 header {
   height: 5rem;
   width: fit-content;
-  margin: var(--marge);
+  margin: var(--inside-margin);
   position: sticky;
   top: var(--marge);
   z-index: 10;
@@ -356,6 +350,13 @@ header img {
 @media (max-width: 900px) {
   header {
     height: 3rem;
+    margin: var(--inside-margin);
+    top: var(--inside-margin);
+  }
+}
+@media (max-width: 1500px) {
+  header {
+    height: 4rem;
     margin: var(--inside-margin);
     top: var(--inside-margin);
   }
@@ -423,13 +424,11 @@ nav .underline:after {
 }
 .metier h2 {
   font-size: var(--title-fontsize);
-  height: calc(var(--title-fontsize) / 1.1);
-  z-index: -1;
+  z-index: 2;
   padding-left: var(--inside-margin);
 }
 @media (max-width: 900px) {
   .metier h2 {
-    height: var(--title-font-size);
     text-align: center;
     margin: var(--inside-margin);
     padding-left: 0;
@@ -548,13 +547,11 @@ nav .underline:after {
 }
 .a-s h2 {
   font-size: var(--subtitle-fontsize);
-  height: calc(var(--subtitle-fontsize) / 1.1);
-  z-index: -1;
+  z-index: 2;
   padding-left: var(--inside-margin);
 }
 @media (max-width: 900px) {
   .a-s h2 {
-    height: var(--subtitle-font-size);
     text-align: center;
     margin: calc(var(--inside-margin) / 1.5);
     padding-left: 0;
