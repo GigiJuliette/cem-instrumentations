@@ -116,11 +116,8 @@
 }
 .a__2 #regions {
   padding: var(--inside-margin);
-  position: absolute;
-  height: 55%;
-  width: fit-content;
-  bottom: 0;
-  right: 6px;
+  height: 100%;
+  width: 100%;
   z-index: -1;
   fill: rgba(238, 143, 11, 0.2274509804);
   justify-self: center;
