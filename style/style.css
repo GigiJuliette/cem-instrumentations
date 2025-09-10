@@ -335,6 +335,13 @@
   transform: translateY(-5px);
 }
 
+footer {
+  background: linear-gradient(0deg, rgba(20, 16, 18, 0.2) 0%, rgba(254, 254, 254, 0.1) 100%);
+  padding: var(--inside-margin);
+  display: flex;
+  justify-content: center;
+}
+
 header {
   height: 5rem;
   width: fit-content;
@@ -626,6 +633,16 @@ body {
   #particles-js {
     display: none;
   }
+}
+
+.cgu-cp_container {
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(1px);
+  border-radius: 30px;
+  background: linear-gradient(90deg, rgba(20, 16, 18, 0.2) 0%, rgba(254, 254, 254, 0.1) 100%);
+  margin-top: 0;
+  margin: var(--bento-margin);
+  padding: var(--inside-margin);
 }
 
 .cta {
