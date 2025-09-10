@@ -1,6 +1,5 @@
-@use 'base' as v;
-@use 'comps';
-
+@use "base" as v;
+@use "comps";
 
 h1,
 h2,
@@ -30,62 +29,62 @@ body {
   z-index: -2;
   pointer-events: none;
 
-  @media (max-width:950px) {
+  @media (max-width: 950px) {
     display: none;
   }
+}
+
+.cgu-cp_container {
+  @include v.glass;
+  @include v.right;
+  margin-top: 0;
+  margin: var(--bento-margin);
+  padding: var(--inside-margin);
 }
 
 .cta {
   padding: var(--inside-margin);
   font-size: 22px;
-  background: radial-gradient(circle,
-      v.$dark 0%,
-      v.$orange 100%) padding-box,
-    radial-gradient(circle,
-      v.$orange 0%,
-      v.$dark 100%) border-box;
+  background: radial-gradient(circle, v.$dark 0%, v.$orange 100%) padding-box,
+    radial-gradient(circle, v.$orange 0%, v.$dark 100%) border-box;
   border-radius: 50em;
   background-size: 300% 300%;
   border: 2px solid transparent;
   animation: gradientShift 8s linear infinite;
   cursor: pointer;
   text-decoration: none;
-  transition: .3s ease-in-out;
+  transition: 0.3s ease-in-out;
 
   &:hover {
-    transform: scale(.98);
-    box-shadow: 0 4px 30px rgba(255, 255, 255, .3);
+    transform: scale(0.98);
+    box-shadow: 0 4px 30px rgba(255, 255, 255, 0.3);
   }
 }
 
 @keyframes gradientShift {
   0% {
     background-position: 0% 50%;
-
   }
 
   25% {
     background-position: 100% 50%;
-
   }
 
   50% {
     background-position: 0% 50%;
-
   }
 
   100% {
     background-position: 0% 50%;
-
   }
 }
 
 .anim {
-  transform: scale(.95) translateY(50px);
+  transform: scale(0.95) translateY(50px);
 }
 
 .xx {
-  animation: anim .3s ease-out forwards;
+  animation: anim 0.3s ease-out forwards;
 }
 
 @keyframes anim {

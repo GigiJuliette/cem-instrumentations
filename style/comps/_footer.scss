@@ -1,1 +1,8 @@
-@use '../base' as v;
+@use "../base" as v;
+
+footer {
+  @include v.bottom;
+  padding: var(--inside-margin);
+  display: flex;
+  justify-content: center;
+}
